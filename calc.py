@@ -31,8 +31,9 @@ def calc_unc(times1, times2):
     '''Return the main time, pace and uncertainty calculations'''
     tot_time = (np.sum(times1) + np.sum(times2)) / 2.
     unc = np.abs(times1 - times2)
+    times = (times1 + times2) / 2.
     tot_unc = np.sqrt(np.sum(unc ** 2))
-    pace = np.mean(times1)
+    pace = np.mean(times)
     pace = time_in_min(pace)
     pace_unc = tot_unc / np.sqrt(len(times1))
     return tot_time, np.around(tot_unc, 2), pace, np.around(pace_unc, 2)
@@ -63,7 +64,7 @@ if __name__ == '__main__':
     # Graph it!
     width = .35
     x = np.append(miles, 10)
-    yerr = np.append(np.abs(j_secs - s_secs), pace_unc)
+    yerr = np.append(np.zeros(len(j_secs)), pace_unc)
     height_strava = np.append(j_secs, np.mean(j_secs))
     height_nike = np.append(s_secs, np.mean(s_secs))
     plt.bar(x, height_strava, width, yerr=yerr, alpha=.35, label='Strava')
