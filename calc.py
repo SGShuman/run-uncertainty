@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def time_in_sec(lst):
+    '''Return a list of seconds from a list of time in mm:ss format'''
     output = []
     for time in lst:
         time_lst = time.split(':')
@@ -13,6 +14,7 @@ def time_in_sec(lst):
     return np.array(output)
 
 def time_in_min(secs):
+    '''Return a formatted time string from a secs int'''
     hours = int(secs / 3600)
     mins = int(secs / 60) - hours * 60
     secs = int(secs % 60)
@@ -26,6 +28,7 @@ def time_in_min(secs):
         return '%s:%s' % (mins, secs)
 
 def calc_unc(times1, times2):
+    '''Return the main time, pace and uncertainty calculations'''
     tot_time = (np.sum(times1) + np.sum(times2)) / 2.
     unc = np.abs(times1 - times2)
     tot_unc = np.sqrt(np.sum(unc ** 2))
@@ -35,16 +38,20 @@ def calc_unc(times1, times2):
     return tot_time, np.around(tot_unc, 2), pace, np.around(pace_unc, 2)
 
 def calc_95_ci(time, unc):
+    '''Return a tuple of (95_ci_high, 95_ci_low)'''
     [secs] = time_in_sec([time])
     high = secs + 1.96 * unc
     low = secs - 1.96 * unc
     return (time_in_min(high), time_in_min(low))
 
 if __name__ == '__main__':
+    # j_times is Strava data (ran by Joel)
     j_times = ['7:47', '8:06', '7:47', '8:01', '7:57', '7:59', '7:58', '8:20', '8:22', '8:27']
+    # s_times is Nike data (ran by Scott)
     s_times = ['7:55', '8:06', '7:41', '7:56', '7:57', '8:04', '7:55', '8:19', '8:27', '8:29']
     miles = np.arange(10)
 
+    # Do Calculations
     j_secs = time_in_sec(j_times)
     s_secs = time_in_sec(s_times)
     tot_time, tot_unc, pace, pace_unc = calc_unc(j_secs, s_secs)
@@ -53,6 +60,7 @@ if __name__ == '__main__':
     )
     print calc_95_ci(pace, pace_unc)
 
+    # Graph it!
     width = .35
     x = np.append(miles, 10)
     yerr = np.append(np.abs(j_secs - s_secs), pace_unc)
