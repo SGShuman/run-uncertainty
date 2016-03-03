@@ -35,7 +35,7 @@ The 10 mile run took us 1:20:46 &plusmn; 14s.  We averaged a 8:04 &plusmn; 4s pa
 
 **Mile times for each mile and the average pace.  The error bars indicate the uncertainty.**
 
-Its interesting that the uncertainties are relatively larger in mile 1.  My guess is that this has to do with the auto-pause feature on the apps.  The first mile has about 5 times the number of stop lights when compared with the other miles so we were stopping frequently.  Also, on the city streets there is a lot more interference from pedestrians potentially causing momentary pace disruptions.  However mile 2 still has stoplights and our times came out the same.  After mile 2, there are only a few lights in miles 3 and 8-10 (when we get to ocean beach.)
+My guess is that most variation has to do with the auto-pause feature on the apps.  The first mile has about 5 times the number of stop lights when compared with the other miles so we were stopping frequently.  You can see this as the large difference between our measured paces.  Also, on the city streets there is a lot more interference from pedestrians potentially causing momentary pace disruptions.  However mile 2 still has stoplights and our times came out the same.  After mile 2, there are only a few lights in miles 3 and 8-10 (when we get to ocean beach.)
 
 
 BTW, [this projects](http://www.runnersworld.co.uk/general/rws-race-time-predictor/1681.html) my half marathon at somewhere between 1:47:13 and 1:47:50 so my Strava uncertainty certainly won't be the deciding factor in whether or not I hit my goal of 1:45.
