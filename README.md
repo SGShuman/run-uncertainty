@@ -15,7 +15,7 @@ Scott and I ran the exact same route at the exact same pace.  We both used the a
 
 #### Route
 
-<img src="route.png" style="width: 350px;"/>​
+<img src="Route.PNG" style="width: 350px;"/>​
 
 **Our route through GGP and along Ocean Beach**
 
